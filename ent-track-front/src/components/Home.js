@@ -25,7 +25,7 @@ export default function Home() {
             Choose the entertainment you would like to log
             </div>
             <div>
-            never loose track of you left off ever again
+            never lose track of you left off ever again
             </div>
 
 
