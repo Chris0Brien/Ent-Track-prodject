@@ -12,7 +12,6 @@ module.exports = (sequelize, DataTypes) => {
         name: DataTypes.STRING,
         website: DataTypes.STRING,
         sequel: DataTypes.STRING,
-        time: DataTypes.INTEGER
       }, {
         sequelize,
         underscored: true,

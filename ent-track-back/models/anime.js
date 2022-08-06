@@ -7,13 +7,17 @@ module.exports = (sequelize, DataTypes) => {
     };
 
     Anime.init({
-        
+      animeId: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+  
+      },
         name: DataTypes.STRING,
         season: DataTypes.INTEGER,
         website: DataTypes.STRING,
         episode: DataTypes.INTEGER,
         nameOfEp: DataTypes.STRING,
-        time: DataTypes.INTEGER
       }, {
         sequelize,
         underscored: true,

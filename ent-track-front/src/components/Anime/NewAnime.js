@@ -11,7 +11,6 @@ export default function NewAnimeForm() {
 		website: '',
 		episode: '',
 		nameOfEp: '', //optional
-        time: '' // optional
 	})
 
     async function handleSubmit(e) {
@@ -82,16 +81,6 @@ export default function NewAnimeForm() {
 						id="NameOfEp"
 						name="NameOfEp"
 					/>
-				</div>
-				<div className="form-group">
-					<label htmlFor="time">How Far Episode *Optional*</label>
-					<input
-						value={anime.time}
-						onChange={e => setAnime({ ...anime, time: e.target.value })}
-						className="form-control"
-						id="time" 
-                        name="time" 
-                    />
 				</div>
 				<input className="btn btn-primary" type="submit" value="Add Anime" />
 			</form>

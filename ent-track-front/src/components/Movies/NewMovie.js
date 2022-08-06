@@ -9,7 +9,6 @@ export default function NewMovieForm() {
 		name: '',
         website: '',
         sequel: '',
-        time: '',
 	})
 
     async function handleSubmit(e) {
@@ -20,7 +19,7 @@ export default function NewMovieForm() {
 			headers: {
 				'Content-Type': 'application/json'
 			},
-			body: JSON.stringify(place)
+			body: JSON.stringify(movies)
 		})
 
         navigate('/Movies')
@@ -61,17 +60,7 @@ export default function NewMovieForm() {
 						name="sequel"
 					/>
 				</div>
-				<div className="form-group">
-					<label htmlFor="time">How Far in Movie *Optional*</label>
-					<input
-						value={movies.time}
-						onChange={e => setMovies({ ...movies, time: e.target.value })}
-						className="form-control"
-						id="time" 
-                        name="time" 
-                    />
-				</div>
-				<input type="submit" value="Add Movies" />
+				<input className="btn btn-primary" type="submit" value="Add Movies" />
 			</form>
 		</main>
 	)

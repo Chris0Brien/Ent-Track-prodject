@@ -24,7 +24,7 @@ export default function NewBookForm() {
 			body: JSON.stringify(book)
 		})
 		
-        navigate('/Book')
+        navigate('/Books')
 	}
     
     return (
