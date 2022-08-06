@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
-import { useHistory, useParams } from "react-router"
+import { useParams } from "react-router"
+import { useNavigate } from "react-router-dom";
 
 function AnimeDetails() {
 
 	const { animeId } = useParams()
 
-	const history = useHistory()
+	const navigate = useNavigate()
 
 	const [anime, setAnime] = useState(null)
 
@@ -23,14 +24,14 @@ function AnimeDetails() {
 	}
 
 	function editAnime() {
-		history.push(`/Anime/${anime.animeId}/edit`)
+		navigate(`/Anime/${anime.animeId}/edit`)
 	}
 
 	async function deleteAnime() {
 		await fetch(`http://localhost:5000/Anime/${anime.animeId}`, {
 			method: 'DELETE'
 		})
-		history.push('/Anime')
+		navigate('/Anime')
 	}
 
 

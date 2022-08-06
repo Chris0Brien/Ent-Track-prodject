@@ -13,6 +13,7 @@ import NewMovieForm from './components/Movies/NewMovie';
 import PrimaryNavbar from './components/Navbar';
 import HandleScroll from './components/ScrollUp';
 import Button from "@mui/material/Button";
+import AnimeDetails from './components/Anime/AnimeDetails';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
                         <Route path="/Manga" element={<Mangalog />}/>
                         <Route path="/Movies" element={<Movielog />}/>
                         <Route path="/Anime/New" element={<NewAnimeForm />}/>
+                        <Route path="/Anime/:animeId" element={<AnimeDetails />} />
                         <Route path="/Manga/New" element={<NewMangaForm />}/>
                         <Route path="/Books/New" element={<NewBookForm />}/>
                         <Route path="/Movies/New" element={<NewMovieForm />}/>

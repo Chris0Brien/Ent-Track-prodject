@@ -14,4 +14,61 @@ router.get('/', async (req, res) => {
     res.json(anime)
 })
 
+router.get('/:animeId', async (req, res) => {
+    let animeId = Number(req.params.animeId)
+    if (isNaN(animeId)) {
+        res.status(404).json({ message: `Invalid id "${animeId}"` })
+    } else {
+        const anime = await Anime.findOne({
+            where: { animeId: animeId },
+            include: {
+                association: 'comments',
+                include: 'author'
+            }
+        })
+        if (!anime) {
+            res.status(404).json({ message: `Could not find anime with id "${animeId}"` })
+        } else {
+            res.json(anime)
+        }
+    }
+})
+
+router.put('/:animeId', async (req, res) => {
+    let animeId = Number(req.params.animeId)
+    if (isNaN(animeId)) {
+        res.status(404).json({ message: `Invalid id "${animeId}"` })
+    } else {
+        const anime = await Anime.findOne({
+            where: { animeId: animeId },
+        })
+        if (!anime) {
+            res.status(404).json({ message: `Could not find anime with id "${animeId}"` })
+        } else {
+            Object.assign(anime, req.body)
+            await anime.save()
+            res.json(anime)
+        }
+    }
+})
+
+router.delete('/:animeId', async (req, res) => {
+    let animeId = Number(req.params.animeId)
+    if (isNaN(animeId)) {
+        res.status(404).json({ message: `Invalid id "${animeId}"` })
+    } else {
+        const anime = await Anime.findOne({
+            where: {
+                animeId: animeId
+            }
+        })
+        if (!anime) {
+            res.status(404).json({ message: `Could not find anime with id "${animeId}"` })
+        } else {
+            await anime.destroy()
+            res.json(anime)
+        }
+    }
+})
+
 module.exports = router
