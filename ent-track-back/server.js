@@ -19,6 +19,9 @@ app.use('/movies', require('./routes/Movies'))
 app.use('/anime', require('./routes/Anime'))
 
 
+app.get("/home", cors(), async (req, res) => {
+	res.sendFile("http://localhost:3000/Anime/undefinedAnime")
+})
 
 
 

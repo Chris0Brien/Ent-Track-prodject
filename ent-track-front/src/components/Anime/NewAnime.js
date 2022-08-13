@@ -75,11 +75,11 @@ export default function NewAnimeForm() {
 				<div className="form-group">
 					<label htmlFor="nameOfEp">Name of Episode *Optional*</label>
 					<input
-						value={anime.NameOfEp}
-						onChange={e => setAnime({ ...anime, NameOfEp: e.target.value })}
+						value={anime.nameOfEp}
+						onChange={e => setAnime({ ...anime, nameOfEp: e.target.value })}
 						className="form-control"
-						id="NameOfEp"
-						name="NameOfEp"
+						id="nameOfEp"
+						name="nameOfEp"
 					/>
 				</div>
 				<input className="btn btn-primary" type="submit" value="Add Anime" />
