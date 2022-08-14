@@ -1,17 +1,17 @@
-const router = require('express').Router()
-const db = require("../models")
+// const router = require('express').Router()
+// const db = require("../models")
 
-const { Manga } = db
+// const { Manga } = db
 
-router.post('/', async (req, res) => {
-    const manga = await Manga.create(req.body)
-    res.json(manga)
-})
+// router.post('/', async (req, res) => {
+//     const manga = await Manga.create(req.body)
+//     res.json(manga)
+// })
 
 
-router.get('/', async (req, res) => {
-    const manga = await Manga.findAll()
-    res.json(manga)
-})
+// router.get('/', async (req, res) => {
+//     const manga = await Manga.findAll()
+//     res.json(manga)
+// })
 
-module.exports = router
+// module.exports = router
